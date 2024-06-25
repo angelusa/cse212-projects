@@ -74,10 +74,11 @@ public class CustomerService
         _queue = new Queue<Customer>();
     }
 
-    /// /// Defines a Customer record for the service queue.
-    /// This is an inner class.  Its real name is CustomerService.Customer
     /// 
 
+    /// Defines a Customer record for the service queue.
+    /// This is an inner class.  Its real name is CustomerService.Customer
+    /// 
     private class Customer
     {
         public Customer(string name, string accountId, string problem)
@@ -97,8 +98,10 @@ public class CustomerService
         }
     }
 
+    /// 
     /// Add a new customer to the queue.
     /// 
+
     public void AddNewCustomer(string name, string accountId, string problem)
     {
         if (_queue.Count >= _maxSize)
@@ -112,6 +115,7 @@ public class CustomerService
     }
 
     /// 
+
     /// Dequeue the next customer and display the information.
     /// 
     public void ServeCustomer()
@@ -128,9 +132,9 @@ public class CustomerService
     /// 
     /// Provide a string representation of the customer service queue object.
     /// 
+
     public override string ToString()
     {
         return $"[size={_queue.Count} max_size={_maxSize} => " + String.Join(", ", _queue) + "]";
     }
-
 }
